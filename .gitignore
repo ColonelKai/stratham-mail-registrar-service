@@ -10,3 +10,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /pocketbase
 pocketbase
+.code-workspace
+stratham-mail-registrat-service.code-workspace
