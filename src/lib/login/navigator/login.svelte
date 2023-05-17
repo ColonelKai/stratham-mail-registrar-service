@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentUser, pb } from "../ret_pocketbase";
+  import { currentUser, pb } from "../../ret_pocketbase";
   let username: string;
   let password: string;
   async function login() {
@@ -9,23 +9,21 @@
   }
   function logout() {
     pb.authStore.clear();
-    
   }
-
-
 </script>
-<div class="mx-auto bg-blue-500 rounded-xs shadow border p-2 flex-wrap	">
+
 {#if $currentUser}
-  <p class="text-right">
+  <p class="p-2 rounded-lg
+            text-white
+            bg-blue-700 hover:bg-slate-400">
     Signed in as {pb.authStore.model?.username}
   </p>
-  <p class="text-right">
-    <button on:click={logout}>Sign Out</button>
-  </p>
+
 {:else}
-<div class="text-right">
-  <button type="button" on:click={login}>Login / Register</button>
-  <p>Our Login System uses Discord oAuth2</p>
-</div>
+  <button class=" p-2 rounded-lg
+                  text-white
+                  bg-blue-700 hover:bg-slate-400"
+  
+  type="button" on:click={login}>Login / Register</button>
 {/if}
-</div>
+
