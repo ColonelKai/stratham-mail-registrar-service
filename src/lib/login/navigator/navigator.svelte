@@ -17,9 +17,9 @@
       </p>
       
 
-      <Navbutton link="#" label="Home"/>
-      <Navbutton link="#" label="View"/>
-      <Navbutton link="#" label="Send"/>
+      <Navbutton link="/" label="Home"/>
+      <Navbutton link="search" label="View"/>
+      <Navbutton link="/" label="Send"/>
 
       <!-- Separator -->
       <div class="p-2"></div>

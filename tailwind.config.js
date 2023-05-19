@@ -6,6 +6,7 @@ export default {
       'serif': ['Arial'],
     },
     extend: {
+      display: ["group-hover"],
       animation: {
         fadeIn: "fadeIn 2s ease-in forwards"
       },

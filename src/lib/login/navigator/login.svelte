@@ -8,16 +8,19 @@
     console.log(pb.authStore.token);
   }
   function logout() {
-    pb.authStore.clear();
+  pb.authStore.clear();
   }
 </script>
 
 {#if $currentUser}
-  <p class="p-2 rounded-lg
+  <div class="p-2 rounded-lg
             text-white
             bg-blue-700 hover:bg-slate-400">
     Signed in as {pb.authStore.model?.username}
-  </p>
+  </div>
+  <div class="">
+
+  </div>
 
 {:else}
   <button class=" p-2 rounded-lg
