@@ -10,6 +10,8 @@
     let id: string;
     let record: Record;
 
+    let signatories: Record[] = [];
+
 
 	onMount(async () => {
         // if no id, send back to search page
@@ -25,6 +27,15 @@
             expand: 'sender,sender_organisation,receivers,signatories,document',
         });
 
+        // we have to reload all signatures to reveal their signer reecord.... there is a way to 
+        // simply recursively load the expansions of expanded records but idk how.
+        record?.expand?.signatories.forEach(async function (record: Record) {
+            signatories.push(await pb.collection('signatures').getOne(record?.id, {
+                expand: 'signer'
+            }));
+        });
+
+        console.log(signatories)
         console.log(record)
     });
 </script>
@@ -46,7 +57,9 @@
                 bg-blue-700 rounded">
             <p class="text-white font-bold text-lg">Document Details</p> <hr class="pb-10">
 
-            <DocDetails record={record} />
+            <DocDetails record={record} signatories={signatories} />
+
+            <p class="text-white font-bold text-lg pt-10">Document</p> <hr class="pb-10 ">
 
             <div class="min-h-screen flex flex-col">
                 <iframe class=" aspect-auto	 m-5 flex-grow"
