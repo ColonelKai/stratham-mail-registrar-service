@@ -2,7 +2,6 @@
     import type { Record } from "pocketbase";
 
     export let record: Record;
-    export let signatories: Record[];
 
     let woo = "px-6 py-4" // probably a reall ybad idea, but it works, it works!
 </script>
@@ -46,8 +45,8 @@
             <td class={woo}><b>Signatories</b></td>
             <td class={woo}>
                 <ul>
-                {#each signatories as Signature} <!--So many errors, help! It still works...-->
-                    <li>{Signature?.expand?.signer?.username} at {Signature.signed_date}
+                {#each record?.expand?.signatories as SignatureRecord} <!--So many errors, help! It still works...-->
+                    <li>{SignatureRecord?.expand?.signer?.username} at {SignatureRecord?.signed_date}
                 {/each}
                 </ul>
             </td>
