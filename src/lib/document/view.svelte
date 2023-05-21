@@ -1,11 +1,11 @@
 <script lang="ts">
-    import doc_details from "./doc_details.svelte"
+    import DocActions from "./doc_actions.svelte";
+    import DocDetails from "./doc_details.svelte";
     import type { Record } from "pocketbase";
     import { pb } from "../ret_pocketbase";
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import { onMount } from "svelte";
-    import DocDetails from "./doc_details.svelte";
 
     let id: string;
     let record: Record;
@@ -64,6 +64,8 @@
         class=" flex flex-col p-10 w-1/5 m-10 pt-5
                 bg-blue-700 rounded">
             <p class="text-white font-bold text-lg">Actions</p> <hr class="pb-10">
+
+            <DocActions document={record}/>
         </div>
 
     </div>
