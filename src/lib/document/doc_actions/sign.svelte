@@ -7,6 +7,8 @@
     export let notify: Function;
 
     async function sign() {
+        notify(null)
+
         let userId = pb.authStore.model?.id;
 
         if(userId === undefined) {
@@ -44,7 +46,6 @@
             const record = await pb.collection('posts').update(document.id, updatedPostData);
 
             notify("Successfully Signed.")
-
         }
     } 
 
