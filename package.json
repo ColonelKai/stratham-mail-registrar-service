@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"pdf-lib": "^1.17.1",
 		"pocketbase": "^0.14.4",
 		"svelte-pdf-simple": "^2.0.0"
 	}

@@ -1,6 +1,7 @@
 <script lang="ts">
     import Sign from "./doc_actions/sign.svelte";
     import Share from "./doc_actions/share.svelte";
+    import Download from "./doc_actions/download.svelte";
 
     import { currentUser, pb } from "../ret_pocketbase";
     import type { Record } from "pocketbase";
@@ -27,9 +28,7 @@
 
     <Sign document={document} notify={notify} />
 
-    <button class="bg-blue-800 rounded text-white text-center p-2">
-        Download Document
-    </button>
+    <Download document={document} notify={notify} />
 
     <Share document={document} notify={notify} />
 </div>
