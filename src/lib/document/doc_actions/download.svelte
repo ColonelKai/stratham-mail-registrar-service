@@ -64,6 +64,8 @@
         link.download = 'RSMS_Document.pdf';
         link.click();
 
+        notify("Document Downloaded")
+
     }
 </script>
 
